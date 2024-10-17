@@ -67,7 +67,7 @@ app.get('/', (_req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-app.get(`/blogs`, async (_req: Request, res: Response, next: NextFunction) => {
+app.get(`/api/blogs`, async (_req: Request, res: Response, next: NextFunction) => {
     try {
         const response = await fetch(`${JSON_SERVER_URL}/blogs`);
         if (!response.ok) {
@@ -80,7 +80,7 @@ app.get(`/blogs`, async (_req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-app.get(`/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
+app.get(`/api/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
         const response = await fetch(`${JSON_SERVER_URL}/blogs/${id}`);
@@ -94,7 +94,7 @@ app.get(`/blogs/:id`, async (req: Request, res: Response, next: NextFunction) =>
     }
 });
 
-app.post(`/blogs`, async (req: Request, res: Response, next: NextFunction) => {
+app.post(`/api/blogs`, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { title, content, author } = req.body;
         if (!title || !content || !author) {
@@ -123,7 +123,7 @@ app.post(`/blogs`, async (req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-app.put(`/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
+app.put(`/api/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
         const { title, content, author } = req.body;
@@ -156,7 +156,7 @@ app.put(`/blogs/:id`, async (req: Request, res: Response, next: NextFunction) =>
     }
 });
 
-app.delete(`/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
+app.delete(`/api/blogs/:id`, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
         const response = await fetch(`${JSON_SERVER_URL}/blogs/${id}`, { method: 'DELETE' });
