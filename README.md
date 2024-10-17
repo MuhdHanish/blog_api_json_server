@@ -64,15 +64,17 @@ The server will run on `http://localhost:8000`.
 
 ## API Endpoints
 
-- `GET /blogs`: Retrieve all blogs
-- `GET /blogs/:id`: Retrieve a specific blog
-- `POST /blogs`: Create a new blog
-- `PUT /blogs/:id`: Update an existing blog
-- `DELETE /blogs/:id`: Delete a blog
+- `/`: Server status
+- `GET /api/blogs`: Retrieve all blogs
+- `GET /api/blogs/:id`: Retrieve a specific blog
+- `POST /api/blogs`: Create a new blog
+- `PUT /api/blogs/:id`: Update an existing blog
+- `DELETE /api/blogs/:id`: Delete a blog
+- `*`: Catch all route for handling undefined routes
 
 ## Request & Response Examples
 
-### GET /blogs
+### GET /api/blogs
 
 Response body:
 ```json
@@ -88,7 +90,7 @@ Response body:
 ]
 ```
 
-### POST /blogs
+### POST /api/blogs
 
 Request body:
 ```json
@@ -111,7 +113,7 @@ Response body:
 }
 ```
 
-### PUT /blogs/:id
+### PUT /api/blogs/:id
 
 Request body:
 ```json
@@ -134,11 +136,11 @@ Response body:
 }
 ```
 
-### DELETE /blogs/:id
+### DELETE /api/blogs/:id
 
 Request:
 ```
-DELETE /blogs/cf74
+DELETE /api/blogs/cf74
 ```
 
 Response:
