@@ -1,4 +1,4 @@
-# Blog API JSONServer
+# Blog API JSON Server
 
 ## Table of Contents
 1. [Introduction](#introduction)
